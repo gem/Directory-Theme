@@ -3,7 +3,7 @@ Directory Theme
 
 <img src="https://raw.githubusercontent.com/Barrowclift/Directory-Theme/master/screenshot.png">
 
-Thanks to [jfrazelle](https://github.com/jfrazelle) for providing [the wonderful base theme](https://github.com/jfrazelle/directory-theme) which I used as the base for this theme.
+Thanks to [jfrazelle](https://github.com/jfrazelle) for providing [the wonderful base theme](https://github.com/jfrazelle/directory-theme) which I used my base.
 
 The core reason for my fork and changes was to focus on NGINX and tweak a few visual aspects of the theme to better suit my own needs and play better with NGINX. The original theme, while great, only truly shined on Apache directory listing since NGINX currently doesn't support richer features such as MIME icons, search, etc. Because of this there was a lot of extra resources that would just be ignored on NGINX and resulted in a browsing experience that wasn't quite as visually nice as the equivalent running on Apache.
 
