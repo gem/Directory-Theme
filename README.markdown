@@ -15,14 +15,14 @@ To start, you're going to want to ensure that your NGINX installation was built 
 Install
 -------
 
-To install, clone or download this repository and put it at the root of your directory listing site in `/var/www/` or wherever you put the websites that you've added to NGINX. To hide the theme directory from your listing change the name to `.theme` as [jfrazelle](https://github.com/jfrazelle) did. At this time feel free to take a peek into footer.html and change the footer links to be your own Twitter account, blog, whatever.
+To install, clone or download this repository and put it at the root of your directory listing site in `/var/www/` or wherever you put the websites that you've added to NGINX. To hide the theme directory from your listing change the name to `.fancyindex` as [jfrazelle](https://github.com/jfrazelle) did. At this time feel free to take a peek into footer.html and change the footer links to be your own Twitter account, blog, whatever.
 
 Now for the last step, in your `sites-enabled` directory in NGINX you're going to want to `vim` into your directory listing site and paste this as the last chunk in your `server` block:
 
 	root /var/www/${YOUR_PATH_HERE};
 	charset utf-8;
 
-	error_page 404 /.theme/404.html;
+	error_page 404 /.fancyindex/404.html;
 	# let non-html ending links point to the html file
 	try_files $uri.html $uri $uri/ =404;
 
@@ -31,9 +31,9 @@ Now for the last step, in your `sites-enabled` directory in NGINX you're going t
 	    auth_basic_user_file  /etc/nginx/conf.d/.htpasswd;
 	    fancyindex on;
 	    fancyindex_exact_size off;
-	    fancyindex_footer /.theme/footer.html;
-	    fancyindex_header /.theme/header.html;
-	    fancyindex_css_href /.theme/style.css;
+	    fancyindex_footer /.fancyindex/footer.html;
+	    fancyindex_header /.fancyindex/header.html;
+	    fancyindex_css_href /.fancyindex/style.css;
 	    fancyindex_time_format "%B %e, %Y";
 	}
 
